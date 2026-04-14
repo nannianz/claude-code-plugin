@@ -9,7 +9,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(mv .claude/skills/ga/SKILL.md skills/ga/SKILL.md)",
-      "Bash(rm -rf .claude/skills)"
+      "Bash(rm -rf .claude/skills)",
+      "Bash(git remote:*)"
     ]
   }
 }

@@ -40,7 +40,7 @@ allowed-tools:
 在 `README.md` 的 Skills 表格中添加新条目：
 
 ```markdown
-| My Skill | 技能描述 | `npx skills add nannianz/claude-code-plugin --path skills/my-skill` |
+| My Skill | 技能描述 | `npx skills add nannianz/skills --path skills/my-skill` |
 ```
 
 ### 3. 提交并推送
@@ -57,16 +57,16 @@ git push origin master
 
 ```bash
 # 安装指定 Skill
-npx skills add nannianz/claude-code-plugin --path skills/ga
+npx skills add nannianz/skills --path skills/ga
 
 # 查看仓库中有哪些 Skills
-npx skills add nannianz/claude-code-plugin --list
+npx skills add nannianz/skills --list
 
 # 安装到全局（所有项目可用）
-npx skills add nannianz/claude-code-plugin --path skills/ga -g
+npx skills add nannianz/skills --path skills/ga -g
 
 # 指定只安装到 Claude Code
-npx skills add nannianz/claude-code-plugin --path skills/ga -a claude-code
+npx skills add nannianz/skills --path skills/ga -a claude-code
 ```
 
 ### 方式 2：手动安装
@@ -75,14 +75,14 @@ npx skills add nannianz/claude-code-plugin --path skills/ga -a claude-code
 
 ```bash
 mkdir -p ~/.claude/skills/ga
-curl -s https://raw.githubusercontent.com/nannianz/claude-code-plugin/master/skills/ga/SKILL.md > ~/.claude/skills/ga/SKILL.md
+curl -s https://raw.githubusercontent.com/nannianz/skills/master/skills/ga/SKILL.md > ~/.claude/skills/ga/SKILL.md
 ```
 
 **Windows PowerShell：**
 
 ```powershell
 mkdir "$env:USERPROFILE\.claude\skills\ga" -Force
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nannianz/claude-code-plugin/master/skills/ga/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\ga\SKILL.md"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nannianz/skills/master/skills/ga/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\ga\SKILL.md"
 ```
 
 ### 方式 3：复制到项目本地

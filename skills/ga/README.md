@@ -5,7 +5,7 @@ Git 快捷操作 - 暂存 / 提交 / 撤销提交。
 ## Install
 
 ```bash
-npx skills add nannianz/claude-code-plugin --path skills/ga
+npx skills add nannianz/skills --path skills/ga
 ```
 
 ## Update
