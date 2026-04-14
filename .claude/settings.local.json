@@ -7,7 +7,9 @@
       "Bash(rmdir ga:*)",
       "WebSearch",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(mv .claude/skills/ga/SKILL.md skills/ga/SKILL.md)",
+      "Bash(rm -rf .claude/skills)"
     ]
   }
 }
