@@ -14,6 +14,8 @@ npx skills add nannianz/claude-code-plugin --path skills/ga
 npx skills update ga
 ```
 
+> **Note:** 安装或更新后需要重启 Claude Code 才能生效。
+
 ## Usage
 
 | 命令 | 作用 | 等效 Git |
