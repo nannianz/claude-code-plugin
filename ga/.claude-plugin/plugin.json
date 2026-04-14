@@ -1,0 +1,6 @@
+{
+  "name": "ga",
+  "description": "Git 快捷操作 - 暂存 / 提交 / 撤销提交",
+  "author": "nannianz",
+  "repository": "https://github.com/nannianz/claude-code-plugin"
+}

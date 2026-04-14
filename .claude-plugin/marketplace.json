@@ -1,12 +1,14 @@
 {
   "name": "claude-git-quick",
+  "owner": "nannianz",
   "description": "Git 快捷操作插件 - 暂存 / 提交 / 撤销提交",
   "plugins": [
     {
       "name": "ga",
-      "type": "skill",
+      "source": "./ga",
       "description": "Git 快捷操作 - 暂存 / 提交 / 撤销提交",
-      "path": "skills/ga"
+      "author": "nannianz",
+      "repository": "https://github.com/nannianz/claude-code-plugin"
     }
   ]
 }
