@@ -8,6 +8,12 @@ Git 快捷操作 - 暂存 / 提交 / 撤销提交。
 npx skills add nannianz/claude-code-plugin --path skills/ga
 ```
 
+## Update
+
+```bash
+npx skills update ga
+```
+
 ## Usage
 
 | 命令 | 作用 | 等效 Git |
