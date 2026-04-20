@@ -64,7 +64,7 @@ git push origin master
 
 ## 下载安装
 
-所有方式均为**项目级安装**（仅当前项目可用）。
+所有方式均为**项目级安装**（仅当前项目可用），需在目标项目目录下运行。
 
 ### 方式 1：Claude Code Marketplace
 
@@ -88,7 +88,7 @@ git push origin master
 ### 方式 2：npx 一键安装
 
 ```bash
-# 安装到当前项目
+# 安装到当前项目（在目标项目目录下运行）
 npx skills add nannianz/skills --path skills/ga-mk
 
 # 查看仓库中有哪些 Skills

@@ -17,10 +17,9 @@ Git 快捷操作 - 暂存 / 提交 / 撤销提交。
 /reload-plugins
 ```
 
-**方式二：npx skills**
+**方式二：npx skills（在目标项目目录下运行）**
 
 ```bash
-# 安装到当前项目
 npx skills add nannianz/skills --path skills/ga-mk
 ```
 
@@ -36,13 +35,13 @@ npx skills add nannianz/skills --path skills/ga-mk
 /plugin uninstall ga-mk
 ```
 
-**npx 安装的：**
+**npx 安装的（在项目目录下运行）：**
 
 ```bash
 npx skills remove ga-mk
 ```
 
-**手动删除：**
+**手动删除（在项目目录下运行）：**
 
 ```bash
 # Linux/Mac
@@ -55,6 +54,7 @@ Remove-Item -Recurse -Force .claude\skills\ga-mk
 ## Update
 
 ```bash
+# 在项目目录下运行
 npx skills update ga-mk
 ```
 

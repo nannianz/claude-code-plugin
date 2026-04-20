@@ -13,6 +13,8 @@ Claude Code 自定义 Skill 插件集合。所有安装均为**项目级**（仅
 
 ### Install
 
+在目标项目目录下运行：
+
 ```bash
 npx skills add nannianz/skills --path skills/ga
 ```
@@ -33,6 +35,8 @@ npx skills remove ga
 
 ### Install
 
+**方式一：Marketplace**
+
 ```bash
 # 1. 添加 marketplace 源（首次需要）
 /plugin marketplace add nannianz/skills
@@ -44,7 +48,7 @@ npx skills remove ga
 /reload-plugins
 ```
 
-或：
+**方式二：npx（在目标项目目录下运行）**
 
 ```bash
 npx skills add nannianz/skills --path skills/ga-mk
