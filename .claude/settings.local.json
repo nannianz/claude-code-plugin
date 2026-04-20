@@ -11,7 +11,10 @@
       "Bash(mv .claude/skills/ga/SKILL.md skills/ga/SKILL.md)",
       "Bash(rm -rf .claude/skills)",
       "Bash(git remote:*)",
-      "Bash(npx skills:*)"
+      "Bash(npx skills:*)",
+      "Bash(cd:*)",
+      "Bash(cp -r ga-mk gamk)",
+      "Bash(rm -rf ga-mk)"
     ]
   }
 }

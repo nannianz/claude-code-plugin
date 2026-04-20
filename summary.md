@@ -12,13 +12,13 @@ claude-code-plugin/
     ├── ga/                # npx 安装方式
     │   ├── SKILL.md
     │   └── README.md
-    └── ga-mk/             # plugin marketplace 安装方式
+    └── gamk/              # plugin marketplace 安装方式
         ├── .claude-plugin/
         │   └── plugin.json
         ├── commands/
-        │   └── ga.md      # 用户可调用的 /ga 命令
+        │   └── gamk.md    # 用户可调用的 /gamk 命令
         ├── skills/
-        │   └── ga/
+        │   └── gamk/
         │       └── SKILL.md  # Claude 自动识别的 skill
         └── README.md
 ```
@@ -73,7 +73,7 @@ git push origin master
 /plugin marketplace add nannianz/skills
 
 # 2. 安装到当前项目
-/plugin install ga-mk --scope project
+/plugin install gamk --scope project
 
 # 3. 激活
 /reload-plugins
@@ -82,14 +82,14 @@ git push origin master
 卸载：
 
 ```bash
-/plugin uninstall ga-mk
+/plugin uninstall gamk
 ```
 
 ### 方式 2：npx 一键安装
 
 ```bash
 # 安装到当前项目（在目标项目目录下运行）
-npx skills add nannianz/skills --path skills/ga-mk
+npx skills add nannianz/skills --path skills/gamk
 
 # 查看仓库中有哪些 Skills
 npx skills add nannianz/skills --list
@@ -100,26 +100,26 @@ npx skills add nannianz/skills --list
 **Linux/Mac：**
 
 ```bash
-mkdir -p .claude/skills/ga-mk
-curl -s https://raw.githubusercontent.com/nannianz/skills/master/skills/ga-mk/skills/ga/SKILL.md > .claude/skills/ga-mk/SKILL.md
+mkdir -p .claude/skills/gamk
+curl -s https://raw.githubusercontent.com/nannianz/skills/master/skills/gamk/skills/gamk/SKILL.md > .claude/skills/gamk/SKILL.md
 ```
 
 **Windows PowerShell：**
 
 ```powershell
-mkdir ".claude\skills\ga-mk" -Force
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nannianz/skills/master/skills/ga-mk/skills/ga/SKILL.md" -OutFile ".claude\skills\ga-mk\SKILL.md"
+mkdir ".claude\skills\gamk" -Force
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/nannianz/skills/master/skills/gamk/skills/gamk/SKILL.md" -OutFile ".claude\skills\gamk\SKILL.md"
 ```
 
 ### 方式 4：复制到项目本地
 
-将 `skills/ga-mk/` 目录复制到你项目的 `.claude/skills/ga-mk/` 下。
+将 `skills/gamk/` 目录复制到你项目的 `.claude/skills/gamk/` 下。
 
 ## 更新
 
 ```bash
 # 更新指定 Skill
-npx skills update ga-mk
+npx skills update gamk
 
 # 更新所有已安装的 Skills
 npx skills update

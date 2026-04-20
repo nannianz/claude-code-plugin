@@ -1,5 +1,5 @@
 ---
-description: Git 快捷操作 - 暂存 / 提交 / 撤销提交。用法：/ga（暂存）、/ga c 提交信息（暂存并提交）、/ga r（撤销上次提交）
+description: Git 快捷操作 - 暂存 / 提交 / 撤销提交。用法：/gamk（暂存）、/gamk c 提交信息（暂存并提交）、/gamk r（撤销上次提交）
 allowed-tools: Bash(git add:*), Bash(git commit:*), Bash(git reset:*)
 ---
 

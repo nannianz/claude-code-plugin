@@ -1,5 +1,5 @@
 ---
-name: ga
+name: gamk
 description: Git 快捷操作 - 暂存 / 提交 / 撤销提交
 version: 1.0.0
 ---
@@ -12,26 +12,26 @@ version: 1.0.0
 
 | 命令 | 等效操作 | 说明 |
 |------|---------|------|
-| `/ga` | `git add .` | 暂存所有变更 |
-| `/ga c xxx` | `git add . && git commit -m "xxx"` | 暂存并提交 |
-| `/ga r` | `git reset --soft HEAD~1` | 撤销上一次 commit（保留代码更改） |
+| `/gamk` | `git add .` | 暂存所有变更 |
+| `/gamk c xxx` | `git add . && git commit -m "xxx"` | 暂存并提交 |
+| `/gamk r` | `git reset --soft HEAD~1` | 撤销上一次 commit（保留代码更改） |
 
 ## Execution
 
-### `/ga` → 暂存所有变更
+### `/gamk` → 暂存所有变更
 
 ```bash
 git add .
 ```
 
-### `/ga c xxx` → 暂存并提交
+### `/gamk c xxx` → 暂存并提交
 
 ```bash
 git add .
 git commit -m "xxx"
 ```
 
-### `/ga r` → 撤销上次提交
+### `/gamk r` → 撤销上次提交
 
 ```bash
 git reset --soft HEAD~1

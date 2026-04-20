@@ -7,7 +7,7 @@ Claude Code 自定义 Skill 插件集合。所有安装均为**项目级**（仅
 | Skill | Description |
 |-------|-------------|
 | Ga | Git 快捷操作（npx 安装） |
-| Ga-mk | Git 快捷操作（Marketplace 安装） |
+| Gamk | Git 快捷操作（Marketplace 安装） |
 
 ## Ga
 
@@ -31,7 +31,7 @@ npx skills update ga
 npx skills remove ga
 ```
 
-## Ga-mk
+## Gamk
 
 ### Install
 
@@ -42,7 +42,7 @@ npx skills remove ga
 /plugin marketplace add nannianz/skills
 
 # 2. 安装到当前项目
-/plugin install ga-mk --scope project
+/plugin install gamk --scope project
 
 # 3. 激活
 /reload-plugins
@@ -51,25 +51,25 @@ npx skills remove ga
 **方式二：npx（在目标项目目录下运行）**
 
 ```bash
-npx skills add nannianz/skills --path skills/ga-mk
+npx skills add nannianz/skills --path skills/gamk
 ```
 
 ### Update
 
 ```bash
-npx skills update ga-mk
+npx skills update gamk
 ```
 
 ### Uninstall
 
 ```bash
-/plugin uninstall ga-mk
+/plugin uninstall gamk
 ```
 
 或：
 
 ```bash
-npx skills remove ga-mk
+npx skills remove gamk
 ```
 
 ## Usage
@@ -78,8 +78,8 @@ npx skills remove ga-mk
 
 | 命令 | 作用 | 等效 Git |
 |------|------|----------|
-| `/ga` | 暂存所有变更 | `git add .` |
-| `/ga c 提交信息` | 暂存并提交 | `git add . && git commit -m "提交信息"` |
-| `/ga r` | 撤销上次提交（保留更改） | `git reset --soft HEAD~1` |
+| `/gamk` | 暂存所有变更 | `git add .` |
+| `/gamk c 提交信息` | 暂存并提交 | `git add . && git commit -m "提交信息"` |
+| `/gamk r` | 撤销上次提交（保留更改） | `git reset --soft HEAD~1` |
 
 > **注意：** 安装或更新后需要重启 Claude Code 才能生效。
