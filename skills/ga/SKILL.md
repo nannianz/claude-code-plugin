@@ -3,6 +3,8 @@
 name: ga
 # 技能描述，说明该技能的用途
 description: Git 快捷操作 - 暂存 / 提交 / 撤销提交
+# 使用的模型（haiku / sonnet / opus）
+model: haiku
 # 别名列表，支持其他触发方式
 aliases:
 # 标记该技能可由用户直接调用
