@@ -15,6 +15,10 @@
     {
       "name": "gamk",
       "source": "./skills/gamk"
+    },
+    {
+      "name": "sdlc",
+      "source": "./skills/sdlc"
     }
   ]
 }

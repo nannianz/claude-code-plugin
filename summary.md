@@ -9,16 +9,24 @@ claude-code-plugin/
 ├── README.md              # 项目首页，Skills 列表
 ├── summary.md             # 本文档
 └── skills/
-    ├── ga/                # npx 安装方式
+    ├── ga/                # npx 安装方式（Skill）
     │   ├── SKILL.md
     │   └── README.md
-    └── gamk/              # Marketplace 安装方式
+    ├── gamk/              # Marketplace 安装方式（Command）
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json
+    │   ├── commands/
+    │   │   └── gamk.md    # 用户可调用的 /gamk 命令
+    │   └── README.md
+    └── sdlc/              # Marketplace 安装方式（Agent / 子智能体）
         ├── .claude-plugin/
         │   └── plugin.json
-        ├── commands/
-        │   └── gamk.md    # 用户可调用的 /gamk 命令
+        ├── agents/
+        │   └── sdlc.md    # SDLC 全流程子智能体定义
         └── README.md
 ```
+
+> 类型差异：`ga` 是 **Skill**（SKILL.md），`gamk` 是 **Command**（commands/），`sdlc` 是 **Agent**（agents/）。
 
 ## 发布流程
 
@@ -42,6 +50,8 @@ allowed-tools:
   - Bash
 ---
 ```
+
+> 若要发布的是 **Command**（slash 命令），改用 `commands/<name>.md`；若是 **Agent**（子智能体），改用 `agents/<name>.md`，frontmatter 用 `name` / `description`（触发条件）/ `tools` / `model`。参考 `skills/sdlc/agents/sdlc.md`。三种类型都需在 `.claude-plugin/marketplace.json` 注册。
 
 ### 2. 更新首页 README
 
@@ -77,6 +87,27 @@ git push origin master
 ```bash
 /plugin uninstall gamk
 ```
+
+### SDLC（Marketplace，Agent）
+
+```bash
+# 1. 添加 marketplace 源（首次需要）
+/plugin marketplace add nannianz/skills
+
+# 2. 安装到当前项目
+/plugin install sdlc --scope project
+
+# 3. 激活
+/reload-plugins
+```
+
+卸载：
+
+```bash
+/plugin uninstall sdlc
+```
+
+安装后，当需要端到端实现一个需求或功能时，主 Claude 会自动委派给 SDLC 子智能体（也可显式 `@sdlc` 或要求「走 SDLC 全流程」）。
 
 ### Ga（npx）
 

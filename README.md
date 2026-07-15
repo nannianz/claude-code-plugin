@@ -4,10 +4,11 @@ Claude Code 自定义 Skill 插件集合。所有安装均为**项目级**（仅
 
 ## Skills
 
-| Skill | Description |
-|-------|-------------|
-| Ga | Git 快捷操作（npx 安装） |
-| Gamk | Git 快捷操作（Marketplace 安装） |
+| Skill | Type | Description |
+|-------|------|-------------|
+| Ga | Skill | Git 快捷操作（npx 安装） |
+| Gamk | Command | Git 快捷操作（Marketplace 安装） |
+| SDLC | Agent | Agentic SDLC 全流程智能体（Marketplace 安装） |
 
 ## Ga
 
@@ -52,9 +53,49 @@ npx skills remove ga
 /plugin uninstall gamk
 ```
 
+## SDLC
+
+Agentic SDLC 全流程智能体 - 以规格（Spec）为中心的八环节流水线（需求→发布）。这是本仓库的**第一个 Agent**（子智能体），区别于 Ga/Gamk 的 Skill/Command。
+
+### Install
+
+```bash
+# 1. 添加 marketplace 源（首次需要）
+/plugin marketplace add nannianz/skills
+
+# 2. 安装到当前项目
+/plugin install sdlc --scope project
+
+# 3. 激活
+/reload-plugins
+```
+
+### Uninstall
+
+```bash
+/plugin uninstall sdlc
+```
+
+### 触发方式
+
+当需要**端到端实现一个需求或功能**、走完整软件开发生命周期时，主 Claude 会自动委派给 SDLC 智能体（也可显式 `@sdlc` 或要求「走 SDLC 全流程」）。
+
+| 环节 | 产物 | 门禁 |
+|------|------|------|
+| S1 需求分析 | `requirements/analysis.md` | 人工门禁 |
+| S2 需求设计（Spec） | `specs/<feature>/spec.md` | **人工签署** ⚑ |
+| S3 软件设计 | `specs/<feature>/design.md` + ADR | 人工门禁 |
+| S4 任务分解编排 | `specs/<feature>/tasks.md` | 自动 + 抽查 |
+| S5 编码 + 测试 | 源码 + 单测/集成测试 | 双层 Review |
+| S6 集成验证 | E2E 测试 + 回归报告 | CI 门禁 |
+| S7 文档 | API 文档 / CHANGELOG / 用户文档 | Agent 校对 |
+| S8 发布 | 安全扫描 + 回归报告 + 发布记录 | **人工拍板** ⚑ |
+
+> 每环节遵循「Agent 执行 → Agent Review → 人工 Review」三层模型，在 Spec 签署 / 架构批准 / 发布决策三个不可逆决策点停下交回用户。
+
 ## Usage
 
-两个插件功能相同：
+Ga 与 Gamk 功能相同（仅安装方式不同）：
 
 | 命令 | 作用 | 等效 Git |
 |------|------|----------|
