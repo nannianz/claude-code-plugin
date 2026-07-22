@@ -9,6 +9,7 @@ Claude Code 自定义 Skill 插件集合。所有安装均为**项目级**（仅
 | Ga | Skill | Git 快捷操作（npx 安装） |
 | Gamk | Command | Git 快捷操作（Marketplace 安装） |
 | SDLC | Agent | Agentic SDLC 全流程智能体（Marketplace 安装） |
+| Issue-Fix | Agent | 问题单开发流程（修复落地 + 自测报告，Marketplace 安装） |
 
 ## Ga
 
@@ -92,6 +93,41 @@ Agentic SDLC 全流程智能体 - 以规格（Spec）为中心的八环节流水
 | S8 发布 | 安全扫描 + 回归报告 + 发布记录 | **人工拍板** ⚑ |
 
 > 每环节遵循「Agent 执行 → Agent Review → 人工 Review」三层模型，在 Spec 签署 / 架构批准 / 发布决策三个不可逆决策点停下交回用户。
+
+## Issue-Fix
+
+问题单开发流程智能体（轻量三段式）- 把一个 Jira 问题单从**根因**推进到**修复落地 + 自测**，全程只产一个文件。与 SDLC 互补：SDLC 管「造新功能」，Issue-Fix 管「修问题单」；上游「问题单分析技能」产出根因后由它接力。
+
+### Install
+
+```bash
+# 1. 添加 marketplace 源（首次需要）
+/plugin marketplace add nannianz/skills
+
+# 2. 安装到当前项目
+/plugin install issue-fix --scope project
+
+# 3. 激活
+/reload-plugins
+```
+
+### Uninstall
+
+```bash
+/plugin uninstall issue-fix
+```
+
+### 触发方式
+
+当需要**修复一个问题单 / 出自测报告**时，主 Claude 会自动委派给 Issue-Fix 智能体（也可显式 `@issue-fix`）。
+
+产物为单文件 `<目标仓库>/openspec/requirements/<ISSUE-KEY>.md`，格式严格按自测报告（问题单号 / Root Cause / 影响范围 / 修复方案 / 测试版本 / 测试人 + Test Points 表 + 测试步骤与结果）。四项交付映射：问题原因→Root Cause、修改范围→影响范围、修改方案→修复方案、修改分支→测试版本。
+
+| 段 | 往文件里填 | 门禁 |
+|----|-----------|------|
+| F1 定位 | 问题单号 / Root Cause（问题原因）/ 影响范围（修改范围） | 干净上下文自审 |
+| F2 方案 | 修复方案（修改方案）/ 测试版本（修改分支）/ 测试人 / Test Points | **人工门禁** ⚑ |
+| F3 实施 | 测试环境 / 测试步骤与结果（修改前·修改后·保存·回显）/ Result | 停下汇报（不提交） |
 
 ## Usage
 

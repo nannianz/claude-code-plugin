@@ -18,11 +18,17 @@ claude-code-plugin/
     │   ├── commands/
     │   │   └── gamk.md    # 用户可调用的 /gamk 命令
     │   └── README.md
-    └── sdlc/              # Marketplace 安装方式（Agent / 子智能体）
+    ├── sdlc/              # Marketplace 安装方式（Agent / 子智能体）
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json
+    │   ├── agents/
+    │   │   └── sdlc.md    # SDLC 全流程子智能体定义
+    │   └── README.md
+    └── issue-fix/         # Marketplace 安装方式（Agent / 子智能体）
         ├── .claude-plugin/
         │   └── plugin.json
         ├── agents/
-        │   └── sdlc.md    # SDLC 全流程子智能体定义
+        │   └── issue-fix.md # 问题单开发流程（修复 + 自测报告）子智能体定义
         └── README.md
 ```
 
@@ -108,6 +114,27 @@ git push origin master
 ```
 
 安装后，当需要端到端实现一个需求或功能时，主 Claude 会自动委派给 SDLC 子智能体（也可显式 `@sdlc` 或要求「走 SDLC 全流程」）。
+
+### Issue-Fix（Marketplace，Agent）
+
+```bash
+# 1. 添加 marketplace 源（首次需要）
+/plugin marketplace add nannianz/skills
+
+# 2. 安装到当前项目
+/plugin install issue-fix --scope project
+
+# 3. 激活
+/reload-plugins
+```
+
+卸载：
+
+```bash
+/plugin uninstall issue-fix
+```
+
+安装后，当需要**修复一个问题单 / 出自测报告**时，主 Claude 会自动委派给 Issue-Fix 子智能体（也可显式 `@issue-fix`）。它走三段式（定位 → 方案 → 实施），只产一个文件 `<目标仓库>/openspec/requirements/<ISSUE-KEY>.md`，格式严格按自测报告；复用问题单分析技能的根因，遵循最小变更，F2 方案批准后动手、F3 写完停下不提交。
 
 ### Ga（npx）
 
