@@ -1,5 +1,5 @@
 {
   "name": "sdlc",
-  "description": "Agentic SDLC 全流程智能体 - 以 Spec 为中心的八环节流水线（需求→发布）",
+  "description": "Agentic SDLC 全流程智能体 - 以 Spec 为中心的八环节流水线（需求→发布）；问题单（bug）修复走 5 步流程（定位/根因/修复/验证/交付，不走八环节）",
   "version": "1.0.0"
 }
